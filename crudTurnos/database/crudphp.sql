@@ -27,24 +27,18 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `cliente`
 --
 
-CREATE TABLE `Horarios` (
-  `idHorario` int(11) NOT NULL,
-  `diaHorario` varchar(100) NOT NULL,
-  `horarioEntrada` text NOT NULL,
-  `horarioSalida` text NOT NULL
+CREATE TABLE `turnos` (
+  `idTurnos` int(11) NOT NULL,
+  `fechaTurno` varchar(100) NOT NULL,
+  `precioTurno` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
-
-INSERT INTO `horarios` (`idHorario`, `diaHorario`, `horarioEntrada`, `horarioSalida`) VALUES
-(1, 'Lunes', '10:00', '20:00'),
-(2, 'Martes', '10:00', '20:00'),
-(3, 'Miercoles', '10:00', '20:00'),
-(4, 'Jueves', '10:00', '20:00'),
-(5, 'Viernes', '10:00', '20:00'),
-(6, 'Sabado', '10:00', '13:00'),
+INSERT INTO turnos(`fechaTurno`, `precioTurno`) VALUES 
+('23/03/24','5000'),
+('05/04/24','5000');
 
 
 --
@@ -54,8 +48,8 @@ INSERT INTO `horarios` (`idHorario`, `diaHorario`, `horarioEntrada`, `horarioSal
 --
 -- Indices de la tabla `cliente`
 --
-ALTER TABLE `horarios`
-  ADD PRIMARY KEY (`idHorario`);
+ALTER TABLE `turnos`
+  ADD PRIMARY KEY (`idTurnos`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -64,8 +58,8 @@ ALTER TABLE `horarios`
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
-ALTER TABLE `Horarios`
-  MODIFY `idHorario` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `turnos`
+  MODIFY `idTurnos` int(11) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
