@@ -27,21 +27,21 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `cliente`
 --
 
-CREATE TABLE `Productos` (
-  `idProducto` int(11) NOT NULL,
-  `nombreProducto` varchar(100) NOT NULL,
-  `fechaIngreso` text NOT NULL,
-  `precioProducto` int(11) NOT NULL
+CREATE TABLE `medicos` (
+  `idMedicos` int(11) NOT NULL,
+  `nombreMedico` varchar(100) NOT NULL,
+  `apellidoMedico` text NOT NULL,
+  `especialidadMedico` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `productos` (`idProductos`, `nombreProducto`, `fechaIngreso`, `precioProducto`) VALUES
-(1, 'Semilla Automatica Lemon haze', '06/12/2023', 3000),
-(2, 'Fertilizante ', '02/12/2023', 1000),
-(3, 'Carpa cultivo', '04/12/2023', 10000),
+INSERT INTO `medicos` (`idMedicos`, `nombreMedico`, `apellidoMedico`, `especialidadMedico`) VALUES
+(1, 'thomas', 'vargas', 'clinico'),
+(2, 'ruben ', 'morales', 'dentista'),
+(3, 'daniel', 'oliva', 'psicologo'),
 
 
 --
@@ -51,8 +51,8 @@ INSERT INTO `productos` (`idProductos`, `nombreProducto`, `fechaIngreso`, `preci
 --
 -- Indices de la tabla `cliente`
 --
-ALTER TABLE `productos`
-  ADD PRIMARY KEY (`idProductos`);
+ALTER TABLE `medicos`
+  ADD PRIMARY KEY (`idMedicos`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -61,8 +61,8 @@ ALTER TABLE `productos`
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
-ALTER TABLE `Productos`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `medicos`
+  MODIFY `idMedicos` int(11) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
