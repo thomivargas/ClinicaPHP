@@ -43,7 +43,20 @@ include("headerLogin.php") ?>
         <div class='flex flex-col gap-5'>
           <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Nombre" name="nombreAdmitido">
           <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Apellido" name="apellidoAdmitido">
-          <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Patologia" name="patologia">
+          <!-- <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Patologia" name="patologia"> -->
+          <!-- Reemplaza el campo de texto por el menú desplegable -->
+          <select class="border border-black p-4 rounded-md" name="patologia">
+            <?php
+            // Consulta para obtener las patologías desde la base de datos
+            $query_patologias = "SELECT * FROM patologia";
+            $result_patologias = mysqli_query($conn, $query_patologias);
+            
+            // Itera sobre los resultados y genera las opciones del menú desplegable
+            while ($row_patologia = mysqli_fetch_assoc($result_patologias)) {
+              echo "<option value='".$row_patologia['nombrePatologia']."'>".$row_patologia['nombrePatologia']."</option>";
+            }
+            ?>
+          </select>
           <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Numero" name="numeroAdmitido">
         </div>
         <input type="submit" class="w-48 px-6 py-3 bg-black text-white font-bold rounded-full cursor-pointer" name="guardar_registro" value="Guardar">
