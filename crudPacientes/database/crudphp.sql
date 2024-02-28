@@ -27,18 +27,18 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `cliente`
 --
 
-CREATE TABLE `cliente` (
-  `idCliente` int(11) NOT NULL,
-  `nombreCliente` varchar(100) NOT NULL,
-  `apellidoCliente` text NOT NULL,
-  `numeroCliente` varchar(100) NOT NULL
+CREATE TABLE `paciente` (
+  `idPaciente` int(11) NOT NULL,
+  `nombrePaciente` varchar(100) NOT NULL,
+  `apellidoPaciente` text NOT NULL,
+  `numeroPaciente` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`idCliente`, `nombreCliente`, `apellidoCliente`, `numeroCliente`) VALUES
+INSERT INTO `paciente` (`idPaciente`, `nombrePaciente`, `apellidoPaciente`, `numeroPaciente`) VALUES
 (1, 'Santiago', 'Servera', '2645762629'),
 (2, 'Thomas', 'Vargas', '2646048808'),
 (3, 'Franco', 'Martin', '2645432867');
@@ -51,8 +51,8 @@ INSERT INTO `cliente` (`idCliente`, `nombreCliente`, `apellidoCliente`, `numeroC
 --
 -- Indices de la tabla `cliente`
 --
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idCliente`);
+ALTER TABLE `paciente`
+  ADD PRIMARY KEY (`idPaciente`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -61,8 +61,8 @@ ALTER TABLE `cliente`
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
-ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `paciente`
+  MODIFY `idPaciente` int(11) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
