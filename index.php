@@ -41,26 +41,24 @@ include("headerLogin.php") ?>
       <h1 class='text-2xl pb-10'>Completa nuestro formulario</h1>
       <form class="w-[600px] flex flex-col gap-10" action="admisionCliente.php" method="POST">
         <div class='flex flex-col gap-5'>
-          <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Nombre" name="nombreAdmitido">
-          <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Apellido" name="apellidoAdmitido">
-          <!-- <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Patologia" name="patologia"> -->
-          <!-- Reemplaza el campo de texto por el menú desplegable -->
-          <select class="border border-black p-4 rounded-md" name="patologia">
-            <?php
-            // Consulta para obtener las patologías desde la base de datos
-            $query_patologias = "SELECT * FROM patologia";
-            $result_patologias = mysqli_query($conn, $query_patologias);
-            
-            // Itera sobre los resultados y genera las opciones del menú desplegable
-            while ($row_patologia = mysqli_fetch_assoc($result_patologias)) {
-              echo "<option value='".$row_patologia['nombrePatologia']."'>".$row_patologia['nombrePatologia']."</option>";
-            }
-            ?>
-          </select>
-          <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Numero" name="numeroAdmitido">
+            <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Nombre" name="nombreAdmitido">
+            <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Apellido" name="apellidoAdmitido">
+            <select class="border border-black p-4 rounded-md" name="patologia">
+                <?php
+                // Consulta para obtener las patologías desde la base de datos
+                $query_patologias = "SELECT * FROM patologia";
+                $result_patologias = mysqli_query($conn, $query_patologias);
+                
+                // Itera sobre los resultados y genera las opciones del menú desplegable
+                while ($row_patologia = mysqli_fetch_assoc($result_patologias)) {
+                    echo "<option value='".$row_patologia['nombrePatologia']."'>".$row_patologia['nombrePatologia']."</option>";
+                }
+                ?>
+            </select>
+            <input type="text" class="border border-black p-4 rounded-md" placeholder="Ingrese Numero" name="numeroAdmitido">
         </div>
         <input type="submit" class="w-48 px-6 py-3 bg-black text-white font-bold rounded-full cursor-pointer" name="guardar_registro" value="Guardar">
-      </form>
+    </form>
     </div>
   </div>
   <a class="font-bold absolute -bottom-32 right-0" href="https://www.linkedin.com/in/thomas-vargas-405576214/" target="_blank">Thomas Vargas</a>

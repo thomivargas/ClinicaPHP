@@ -45,7 +45,7 @@
           </ul>
           <a class="hover:text-gray-400" href="../crudTurnos/createTurno.php">Turnos</a>
           <a class="hover:text-gray-400" href="../crudSucursales/createSucursal.php">Sucursales</a>
-          <a class="hover:text-gray-400" href="../admisionCliente/indexAdmision.php">Admision</a>
+          <a class="hover:text-gray-400" href="../admisionCliente/readAdmision.php">Admision</a>
         </ul>
       </div>   
       <a class="hover:text-gray-400" href="../logout.php">Cerrar sesión</a>               

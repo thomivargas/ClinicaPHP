@@ -45,7 +45,7 @@
             <a class="<?= ($_SERVER['PHP_SELF'] == '/Finallp2/crudTurnos/deleteTurno.php') ? 'text-sky-500' : 'text-white'; ?>" href="deleteTurno.php">Eliminar</a>
           </ul>
           <a class="hover:text-gray-400" href="../crudSucursales/createSucursal.php">Sucursales</a>
-          <a class="hover:text-gray-400" href="../admisionCliente/createAdmision.php">Admision</a>
+          <a class="hover:text-gray-400" href="../admisionCliente/readAdmision.php">Admision</a>
         </ul>
       </div>   
       <a class="hover:text-gray-400" href="../logout.php">Cerrar sesión</a>               

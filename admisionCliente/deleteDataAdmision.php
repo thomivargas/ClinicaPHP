@@ -1,4 +1,4 @@
-<?php include("../crudCliente/db.php")?>
+<?php include("../crudPacientes/db.php")?>
 
 <?php
 if(isset($_GET['idAdmision'])){
@@ -17,7 +17,7 @@ if(isset($_GET['idAdmision'])){
     }
     //si quisiera redireccionar a index directamente: ?>
     <script>
-    window.location = "indexAdmision.php";
+    window.location = "readAdmision.php";
     </script>
     
 

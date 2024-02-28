@@ -1,5 +1,5 @@
 <?php include("../admisionCliente/includes/header.php")?>
-<?php include("../crudCliente/db.php")?>
+<?php include("../crudPacientes/db.php")?>
 <?php
 session_start();
 
@@ -10,60 +10,39 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 ?>
-<style>
-    .div{
-        background-image:url('../crudCliente/images/backgroundIndex.jpg') ;
-        width: 100%;
-        height: 100vh;
-        background-size: cover;
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-</style>
-<div class="div">
-<div class ="card text-center font-weight-light text-dark navbar-light" style="background-color: #D5FEB7;">
-        <div class="card-body ">
-            <h1 class="card-title">Eliminar clientes</h1>
-            <p class="card-text">Los siguientes son los datos guardados hasta el momento:</p>
-         
-            <div class="table-responsive-sm">
-                <table class="table ">
-                    <thead>
-                        <tr class="table-success">
-                            <th>Nombre cliente</th>
-                            <th>Apellido cliente</th>
-                            <th>Patologia</th>
-                            <th>Numero</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $query = "SELECT * FROM admisionCliente";
-                        $result_Admision = mysqli_query($conn, $query);
-
-                        while($row = mysqli_fetch_array($result_Admision)){?>
-                            <tr>
-                                <td><?php echo $row['nombreAdmitido']?></td>
-                                <td><?php echo $row['apellidoAdmitido']?></td>
-                                <td><?php echo $row['patologia']?></td>
-                                <td><?php echo $row['numeroAdmitido']?></td>
-                                <td>
-                                    <a href="deleteDataAdmitido.php?idAdmision=<?php echo $row['idAdmision']?>">
-                                    <button type="button" class="btn btn-danger">Eliminar</button>
-                                </a>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div> 
+<div class ="h-screen w-full flex items-center justify-center">
+    <div>
+        <h1 class="text-4xl font-bold my-5 text-center">Admisiones</h1>
+        <table class="table-auto">
+            <thead class="border border-black">
+                <tr class="px-8 py-4 border border-black text-white bg-sky-800">
+                    <th class="px-8 py-4">Nombre</th>
+                    <th class="px-8 py-4">Apellido</th>
+                    <th class="px-8 py-4">Patologia</th>
+                    <th class="px-8 py-4">Numero</th>
+                    <th class="px-8 py-4">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            $query = "SELECT * FROM admisionCliente";
+            $result_Admision = mysqli_query($conn, $query);
+                while($row = mysqli_fetch_array($result_Admision)){?>
+                    <tr class="px-8 py-4 border border-black">
+                        <td class="px-8 py-4 border border-black"><?php echo $row['nombreAdmitido']?></td>
+                        <td class="px-8 py-4 border border-black"><?php echo $row['apellidoAdmitido']?></td>
+                        <td class="px-8 py-4 border border-black"><?php echo $row['patologia']?></td>
+                        <td class="px-8 py-4 border border-black"><?php echo $row['numeroAdmitido']?></td>
+                        <td class="px-8 py-4 border border-black">
+                            <a href="deleteDataAdmision.php?idAdmision=<?php echo $row['idAdmision']?>"">
+                                <img src="../images/delete.svg" alt="edit" class="w-5 mx-auto">
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
 </div>
-    
 
-<?php include("../crudCliente/includes/footer.php")?>
+<?php include("../crudPacientes/includes/footer.php")?>

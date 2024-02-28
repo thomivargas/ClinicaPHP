@@ -1,4 +1,4 @@
-<?php include("./crudCliente/db.php")?>
+<?php include("./crudPacientes/db.php")?>
 <?php 
 
 if (isset($_POST['guardar_registro'])){

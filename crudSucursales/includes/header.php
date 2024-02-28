@@ -45,7 +45,7 @@
               <a class="<?= ($_SERVER['PHP_SELF'] == '/Finallp2/crudSucursales/updateSucursal.php') ? 'text-sky-500' : 'text-white'; ?>" href="updateSucursal.php">Editar</a>
               <a class="<?= ($_SERVER['PHP_SELF'] == '/Finallp2/crudSucursales/deleteSucursal.php') ? 'text-sky-500' : 'text-white'; ?>" href="deleteSucursal.php">Eliminar</a>
             </ul>
-          <a class="hover:text-gray-400" href="../admisionCliente/createAdmision.php">Admision</a>
+          <a class="hover:text-gray-400" href="../admisionCliente/readAdmision.php">Admision</a>
         </ul>
       </div>   
       <a class="hover:text-gray-400" href="../logout.php">Cerrar sesión</a>               
