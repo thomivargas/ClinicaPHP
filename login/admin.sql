@@ -27,17 +27,17 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `users` (
   `idAdmin` int(11) NOT NULL,
   `usuario` varchar(100) NOT NULL,
-  `contraseña` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `admin`
 --
 
-INSERT INTO `admin` (`idAdmin`, `usuario`, `contraseña`) VALUES
+INSERT INTO `admin` (`idAdmin`, `usuario`, `password`) VALUES
 (1, 'admin', '123321');
 
 --
@@ -47,7 +47,7 @@ INSERT INTO `admin` (`idAdmin`, `usuario`, `contraseña`) VALUES
 --
 -- Indices de la tabla `admin`
 --
-ALTER TABLE `admin`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`idAdmin`);
 
 --
@@ -57,7 +57,7 @@ ALTER TABLE `admin`
 --
 -- AUTO_INCREMENT de la tabla `admin`
 --
-ALTER TABLE `admin`
+ALTER TABLE `users`
   MODIFY `idAdmin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
